@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>London Submetros</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map { height: 600px; width: 100%; }
+        #container { display: flex; }
+        #controls { flex: 1; }
+        #job-tracker { flex: 1; margin-left: 20px; }
+        .postcode-item { margin-bottom: 5px; }
+        .color-box {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        .submetro-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .submetro-item {
+            cursor: pointer;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .submetro-item:hover {
+            background-color: #f0f0f0;
+        }
+        .submetro-element {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .submetro-text {
+            flex: 0 0 150px; /* Fixed width to align bars */
+        }
+        .bar-container {
+            flex-grow: 1;
+            background-color: #f0f0f0;
+            height: 16px;
+            margin-left: 10px;
+            position: relative;
+        }
+        .bar {
+            display: block;
+            height: 100%;
+            position: absolute;
+        }
+        .marker-line {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background-color: lightblue;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="container">
+        <div id="controls"><h3></h3></div>
+        <div id="job-tracker"></div>
+    </div>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
